@@ -1,3 +1,0 @@
-interface ERTCPeerConnection extends RTCPeerConnection {
-
-}

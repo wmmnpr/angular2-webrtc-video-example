@@ -1,12 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-require('webrtc-adapter');
+import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared';
-import { WebRTCChatModule, WebRTCChatComponent } from './webrtc-chat';
 
 @NgModule({
   declarations: [
@@ -14,15 +10,9 @@ import { WebRTCChatModule, WebRTCChatComponent } from './webrtc-chat';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    SharedModule,
-    WebRTCChatModule
+    AppRoutingModule
   ],
-  entryComponents: [
-    AppComponent,
-    WebRTCChatComponent
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
