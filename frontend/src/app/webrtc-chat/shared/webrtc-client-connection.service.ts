@@ -29,7 +29,7 @@ export class WebRTCConnectionService {
     private webrtcClientStore: WebRTCClientStore,
     private mediaStream: MediaStreamService
   ) {
-    this.socket = io.connect('http://localhost:3000');
+    this.socket = io.connect('http://DEPC008625:3000');
 
     this.socket.on('connect', () => {
       console.log('Socket connected. I am', this.socket.id);

@@ -8,7 +8,7 @@ class Server {
   public app: express.Application;
   private server: http.Server;
   public io: SocketIO.Server;
-  private allowedOrigins = [ 'http://localhost:4200' ];
+  private allowedOrigins = [ 'http://DEPC008625:4200' ];
 
 
   public static bootstrap(): Server {
