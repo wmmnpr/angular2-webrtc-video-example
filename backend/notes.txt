@@ -1,0 +1,16 @@
+
+
+After creating app (here rowwithme-webrtc-ice-server ) using heroku console do the following:
+
+#change the type to container
+heroku stack:set container --app rowwithme-webrtc-ice-server 
+
+heroku container:login
+
+heroku auth:token
+
+docker login --username=_ --password=8c4e65b6-4ba1-4766-b39e-277ae39dde06 registry.heroku.com
+
+heroku container:push web --app rowwithme-webrtc-ice-server
+
+heroku container:release web --app rowwithme-webrtc-ice-serve

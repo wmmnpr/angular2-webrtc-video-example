@@ -4,12 +4,11 @@ import * as bodyParser from 'body-parser';
 import * as socketio from 'socket.io';
 import * as http from 'http';
 
+const PORT = process.env.PORT || 3000;
 class Server {
   public app: express.Application;
   private server: http.Server;
   public io: SocketIO.Server;
-  private allowedOrigins = [ 'http://DEPC008625:4200' ];
-
 
   public static bootstrap(): Server {
     return new Server();
@@ -26,13 +25,7 @@ class Server {
   private config() {
     this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
       const origin = req.header('Origin');
-
-      for (let o of this.allowedOrigins) {
-        if (o === origin) {
-          res.header('Access-Control-Allow-Origin', origin);
-          break;
-        }
-      }
+      res.header('Access-Control-Allow-Origin', origin);
     });
 
     this.app.use(bodyParser.json());
@@ -44,8 +37,8 @@ class Server {
       res.send('Hello!');
     });
 
-    this.server.listen(3000, () => {
-      console.log('Server is listening on port 3000');
+    this.server.listen(PORT, () => {
+      console.log(`Server is listening on port ${PORT}`);
     });
   }
 

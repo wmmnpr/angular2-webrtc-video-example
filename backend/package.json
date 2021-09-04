@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
-    "start": "node ./dist/server.js"
+    "start": "node server.js",
+    "build-image": "docker build -t wmmnpr-webrtc-ice-server -f Dockerfile ."
   },
   "keywords": [],
   "author": "Philipp Jäcks",
