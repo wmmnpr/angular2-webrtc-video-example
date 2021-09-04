@@ -1,4 +1,6 @@
 
+Pushing changes to my github
+https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 After creating app (here rowwithme-webrtc-ice-server ) using heroku console do the following:
 
